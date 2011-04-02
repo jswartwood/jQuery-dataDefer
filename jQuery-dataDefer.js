@@ -1,7 +1,12 @@
 /*!
  * jQuery dataDefer (+ dataDefault)
- * 
+ * https://github.com/jswartwood/jQuery-dataDefer
+ *
  * Copyright (c) 2011 Jacob Swartwood
+ * Licensed under the MIT license
+ * http://jacob.swartwood.info/license/
+ *
+ * enjoy.
  */
 
 (function( $, undefined ) {
