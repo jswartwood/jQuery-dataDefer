@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="../jQuery-dataDefer.js"></script>
+</head>
+<body>
+	<button id="ask">How many Worlds are there???</button>
+	<div id="hello">Hello...</div>
+	<script type="text/javascript">
+		// Preliminary work to make the page heavier...
+		var i = 12345;
+		while (i--) {
+			$("#hello").append(" <span>World</span>");
+		}
+		
+		alert("Phew! That was intense; I need a break from any difficult Javascript. I wonder if you will ever even ask for the number of Worlds...");
+		
+		// Set dataDefer to get the number of times the word "World" exists in #hello
+		$("#hello").dataDefer("numWorlds", function() {
+			try {
+				console.log("Starting calculation...");
+			} catch ( err ) {}
+			
+			var str = $(this).text(),
+				index = -1;
+				count = 0;
+			
+			while ((index = str.indexOf("World")) !== -1) {
+				count++;
+				str = str.substr(index + 5);
+			}
+			
+			try {
+				console.log("Done.");
+			} catch ( err ) {}
+			
+			return count;
+		});
+		
+		// Fetch and cache the number of Worlds
+		$("#ask").click(function() {
+			alert($("#hello").data("numWorlds"));
+		});
+	</script>
+</body>
