@@ -9,6 +9,7 @@ parsing, remapping arrays or objects, etc.  It is pretty magical for storing ref
 
 ## Quick usage
 
+	// I know I might need a list of the first 1000 fibonacci numbers
 	$(document).dataDefer("fibonacci", function() {
 		var n = [1,1],
 			series = n[0] + " + " + n[1];
